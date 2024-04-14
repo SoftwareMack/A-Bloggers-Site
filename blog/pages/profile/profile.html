@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>BlogTown - Home Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="icon" href="../../SoftwareMackLogo .jpg">
+    <style>
+        body {
+            background: #F3F4F6;
+        }
+
+        nav {
+            background: skyblue;
+        }
+
+        .donDash {
+            width: 85%;
+            margin: 50px auto 0;
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .donDash button {
+            background-color: skyblue;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            width: 150px;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 7px 0;
+            margin-top: 10px;
+        }
+
+        .donDash input {
+            margin-top: 10px;
+        }
+
+        .saa-nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control:focus {
+            border-color: skyblue;
+            box-shadow: 0px 0px 5px skyblue;
+        }
+
+        textarea {
+            margin-top: 10px;
+            height: 100px;
+            resize: none;
+        }
+
+        .myb {
+            font-size: 28px;
+        }
+
+        main {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            width: 100%;
+            padding: 50px;
+            background-color: #9597990e;
+            flex-direction: column;
+        }
+
+        .profile-container h1 {
+            margin: 20px 0 20px 0;
+        }
+
+        .profile-container input,
+        textarea {
+            padding: 10px 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+            outline: 0;
+            border-radius: 5px;
+        }
+
+        .profile-container button {
+            padding: 10px 30px;
+            border-radius: 5px;
+            background-color: skyblue;
+            border: 1px solid skyblue;
+            color: #fff;
+            cursor: pointer;
+        }
+
+
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            color: white !important;
+        }
+
+        .img {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .inputs {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 10;
+        }
+
+        .saa-nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cursor{
+    cursor: pointer;
+}
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="container navbar-nav d-flex justify-content-between mb-2 mb-lg-0 w-100">
+                    <div class="">
+                        <a class="nav-link fw-bold text-white" style="font-size: 20px;" onclick="location.replace('../../index.html')"> A Bloggers Way App</a>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <p id="username" style="margin: 0;" class="cursor nav-link text-white">D.Mack</p>
+                        <a class="nav-link text-white" style="font-weight: bold;" id="lO">Logout</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid bg-white saa-nav">
+        <div class="container">
+            <h3 class="fw-bold" style="margin: 0;" onclick="location.replace('../dashboard/dashboard.html')">Profile Page</h3>
+        </div>
+    </div>
+
+    <main>
+        <div class="profile-container">
+            <div class="img">
+                <input type="file" id="img" style="display: none;" onchange="updpic()">
+                <img src="" id="don" style="object-fit: cover;">
+                <label for="img">
+                    <i class="fa-solid fa-pen-clip  cursor"
+                    style="font-size: 20px; color:skyblue ; position: absolute; bottom: 10px; right: 10px; padding: 10px; background-color: rgba(255, 255, 255, 0.3);"></i>
+                </label>
+            </div>
+            <div style="padding: 0; margin: 0 0 20px; display: flex; align-items: center;">
+                <div class="container" style="display: none; align-items: center; gap: 10px; padding: 0; margin-top: 20px;" id="uA">
+                    <input type="text"
+                        style="padding: 5px 10px; border-radius: 10px; outline: 1px solid skyblue; width: 100%; margin: 0;"
+                        placeholder="New User Name" id="upd">
+                    <button style="font-size: 18px; font-weight: bolder; padding: 4px 10px; border-radius: 10px;"
+                        onclick="change()">Update</button>
+                </div>
+                <div class="container" style="display: flex; align-items: center; gap: 10px; padding: 0;" id="pA">
+                    <h1 style="font-size: 26px;" id="uuu">D. Mack</h1>
+                    <i class="fa-solid fa-pen-to-square  cursor" style="font-size: 22px; color: skyblue; margin-left: 20px;"
+                        onclick="updName()"></i>
+                </div>
+            </div>
+            <div class="inputs">
+                <input type="text"
+                    style="padding: 5px 10px; border-radius: 10px; outline: 1px solid skyblue; width: 100%"
+                    placeholder="Old Password">
+                <input type="text"
+                    style="padding: 5px 10px; border-radius: 10px; outline: 1px solid skyblue; width: 100%"
+                    placeholder="New Password" id="p">
+                <input type="text"
+                    style="padding: 5px 10px; border-radius: 10px; outline: 1px solid skyblue; width: 100%"
+                    placeholder="Confirm New password" id="uP">
+                <button style="width: 70%;" id="upPass">Update Password</button>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script src='sweetalert2.all.min.js'></script>
+    <script type="module" src="./profile.js"></script>
+</body>
+
+</html>
